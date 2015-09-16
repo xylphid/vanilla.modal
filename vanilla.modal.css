@@ -1,0 +1,74 @@
+/**
+ * Slide-show
+ */
+.vanilla-modal,
+.vanilla-modal * {
+    box-sizing:border-box;
+}
+.vanilla-modal {
+    background-color:#FFF;
+    border-radius:5px;
+    left:50%;
+    max-height:100%;
+    max-width:100%;
+    padding:10px;
+    position:fixed;
+    top:50%;
+    transition:opacity 1s, margin-top 1s;
+}
+.vanilla-modal > .close {
+    background: url(images/close.png) no-repeat center center;
+    border:solid 2px #FFF;
+    border-radius: 15px;
+    height: 20px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 20px;
+}
+
+/**
+ * Action buttons
+ */
+.vanilla-modal > .actions {
+    display:flex;
+    justify-content:center;
+    padding:2px;
+    position:absolute;
+    top:0;
+    width:100%;
+}
+.vanilla-modal > .actions > * {
+    align-items:center;
+    cursor:pointer;
+    display:flex;
+    font-weight:bold;
+    justify-content:center;
+    flex:0 30px;
+    height:30px;
+    margin:2px;
+    opacity:.65;
+}
+.vanilla-modal > .actions > .close {
+    background:url('images/close.png') no-repeat 0 0;
+}
+
+/**
+ * Spinner
+ */
+.vanilla-modal > .spinner {
+    align-self:center;
+    background:url('images/spinner.gif') no-repeat center center;
+    background-color:rgba(0, 0, 0, .8);
+    border-radius:4px;
+    height:24px;
+    left:50%;
+    margin:0 auto;
+    position:absolute;
+    top:50%;
+    width:24px;
+    z-index:3;
+}
+.vanilla-modal > img.spinner {
+    opacity:1;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script src="https://rawgithub.com/xylphid/vanilla/master/vanilla.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../vanilla.modal.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="../vanilla.modal.css" type="text/css" media="screen" />
+        <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Roboto:100,300);
+        body {
+            box-shadow:0px 0px 5px #000;
+            display:flex;
+            flex-direction:column;
+            font-family:Roboto, Arial, sans-sherif;
+            font-size:16px;
+            font-weight:300;
+            margin:0 auto;
+            padding:10px 20px;
+            width:1000px;
+        }
+        h1, h2 {
+            color:#6f3e92;
+            font-size:48px;
+            font-weight:normal;
+        }
+        h2 {
+            font-size:30px;
+            margin-left:20px;
+        }
+        pre {
+            box-shadow: 0px 0px 2px #000;
+            background-color:#F0F0F0;
+        }
+        a {
+            cursor:pointer;
+            text-decoration:none;
+            color:#6f3e92;
+            transition:all 200ms ease;
+        }
+        a:hover {
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.333);
+        }
+        body > div[id^=example] { display:none; }
+        div.example a { padding:5px; }
+        .highlight {
+            background-color:rgba(0,0,0,0.04);
+            border-radius:3px;
+            padding:0 2px;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Vanilla modal</h1>
+
+        <h2>Open and close modal with link</h2>
+        <!-- Single image automatic -->
+        <p class="tutorial">Add <span class="highlight">data-modal</span> attribute to your links and use <span class="highlight">href</span> attribute to define what should be opened in the modal.</p>
+        <a href="#example-1" data-modal>Click to open</a>
+        <div id="example-1" class="example">
+            Lorem ipsum
+        </div>
+        <pre><code>
+    &lt;a href=&quot;#example-1&quot; data-modal&gt;Click to open&lt;/a&gt;
+    &lt;div id=&quot;example-1&quot; class=&quot;example&quot;&gt;
+        Lorem ipsum
+    &lt;/div&gt;
+        </code></pre>
+
+        <h2>Open and close modal with AJAX</h2>
+
+        <p class="tutorial">This example opens the modal automatically and load the page content into modal with AJAX.</p>
+        <a href="ajax.html" data-modal>Click to open</a>
+        <pre><code>
+    &lt;a href=&quot;ajax.html&quot; data-modal&gt;Click to open&lt;/a&gt;
+        </code></pre>
+        <p class="tutorial">
+            The following example shows how you can manually load AJAX page into a modal.<br />
+            <strong>Note :</strong> Ajax response must be wrapped in a div with class <span class="highlight">vanilla-modal-content</span>
+        </p>
+        <a href="ajax.html" id="example-ajax">Click to open</a>
+        <script type="text/javascript">
+        vanilla('#example-ajax').on('click', function(event){
+            event.preventDefault();
+            vanilla(this).modal();
+        });
+        </script>
+        <pre><code>
+    &lt;a href=&quot;ajax.html&quot; id=&quot;example-ajax&quot;&gt;Click to open&lt;/a&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    vanilla('#example-ajax').on('click', function(event){
+        event.preventDefault();
+        vanilla(this).modal();
+    });
+    &lt;/script&gt;
+        </code></pre>
+
+        <h2>Options</h2>
+
+        <pre><code>
+    vanilla.modal.defaults = {
+        opacity: 0.75,              // Overlay opacity
+        overlay: '#000',            // Overlay color
+        showSpinner: true,          // Show spinner on loading
+        zIndex: 1,                  // Overlay z-index
+    }
+        </code></pre>
+
+        <script type="text/javascript">
+        // Set background color
+        singles = vanilla('[id^=example]');
+        singles.each(function( el ) {
+            el.css('background', '#FBFBFB');
+        });
+        </script>
+    </body>
+</html>
