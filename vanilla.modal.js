@@ -1,6 +1,6 @@
 /**
  * Vanilla modal ;) (https://github.com/xylphid)
- * Version 0.1.0
+ * Version 0.1.1
  *
  * @author Anthony PERIQUET
  */
@@ -165,13 +165,13 @@
     };
 
     var isUrl = function( string ) {
-        var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-            '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-            '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-            '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-            '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-            '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-        return urlPattern.test( string );
+        try {
+            document.querySelectorAll( string );
+            return false;
+        }
+        catch (e) {
+            return true;
+        }
     };
 
     vanilla.prototype.modal = function(options) {

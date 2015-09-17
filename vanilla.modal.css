@@ -28,32 +28,6 @@
 }
 
 /**
- * Action buttons
- */
-.vanilla-modal > .actions {
-    display:flex;
-    justify-content:center;
-    padding:2px;
-    position:absolute;
-    top:0;
-    width:100%;
-}
-.vanilla-modal > .actions > * {
-    align-items:center;
-    cursor:pointer;
-    display:flex;
-    font-weight:bold;
-    justify-content:center;
-    flex:0 30px;
-    height:30px;
-    margin:2px;
-    opacity:.65;
-}
-.vanilla-modal > .actions > .close {
-    background:url('images/close.png') no-repeat 0 0;
-}
-
-/**
  * Spinner
  */
 .vanilla-modal > .spinner {
