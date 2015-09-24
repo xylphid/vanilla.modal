@@ -1,6 +1,6 @@
 /**
  * Vanilla modal ;) (https://github.com/xylphid)
- * Version 0.1.1
+ * Version 0.1.2
  *
  * @author Anthony PERIQUET
  */
@@ -133,7 +133,8 @@
 
         // Close the modal
         close: function() {
-            this.modal.css('opacity', 0);
+            this.modal.css('opacity', 0)
+                .css('z-index', -1);
             this.overlay.css('opacity', 0)
                 .css('z-index', -1);
             this.opened = false;
