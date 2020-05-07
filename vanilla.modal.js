@@ -1,6 +1,6 @@
 /**
  * Vanilla modal ;) (https://github.com/xylphid)
- * Version 0.1.2
+ * Version 0.1.3
  *
  * @author Anthony PERIQUET
  */
@@ -101,7 +101,8 @@
                 } );
             }
             else {
-                this.modal.append( vanilla( this.elm.attr('href') ).outerHtml() );
+                var content = this.elm.attr('href') ? vanilla( this.elm.attr('href') ).outerHtml() : this.elm;
+                this.modal.append( content );
                 this.center();
                 this.hideSpinner();
             }
